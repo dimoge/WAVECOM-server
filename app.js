@@ -10,7 +10,7 @@ app.set('view engine', 'ejs');
 //app.set('/public', __dirname+'/public');
 app.use('/public', express.static(path.join(__dirname, 'public')));
 
-app.get('/wavecom', function(req, res, next){
+app.get('/wavecom/cgi-bin/message.pl', function(req, res, next){
   console.log("recive wavecom....");
 });
 
