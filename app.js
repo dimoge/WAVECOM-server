@@ -12,7 +12,6 @@ app.use('/public', express.static(path.join(__dirname, 'public')));
 
 app.get('/wavecom', function(req, res, next){
   console.log("recive wavecom....");
-  res.render("success~~~~~~~~~~")
 });
 
 app.listen(port);
