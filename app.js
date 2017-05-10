@@ -12,6 +12,7 @@ app.use('/public', express.static(path.join(__dirname, 'public')));
 
 app.get('/wavecom', function(req, res, next){
   console.log("短信来了")
+  res.render("success~~~~~~~~~~")
 });
 
 app.listen(port);
