@@ -11,7 +11,7 @@ app.set('view engine', 'ejs');
 app.use('/public', express.static(path.join(__dirname, 'public')));
 
 app.get('/wavecom', function(req, res, next){
-  console.log("短信来了")
+  console.log("recive wavecom....");
   res.render("success~~~~~~~~~~")
 });
 
