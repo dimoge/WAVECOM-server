@@ -11,7 +11,7 @@ app.set('view engine', 'ejs');
 app.use('/public', express.static(path.join(__dirname, 'public')));
 
 app.get('/wavecom/cgi-bin/message.pl', function(req, res, next){
-  console.log("recive wavecom....");
+  console.log("recive wavecom...."+req.query.mobile+"在"+req.query.time+"发来消息,内容是:"+req.query.content);
 });
 
 app.listen(port);
