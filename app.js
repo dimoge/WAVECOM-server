@@ -19,17 +19,18 @@ app.set('view engine', 'ejs');
  * 保存数据到数据库
  */
 app.get('/wavecom/cgi-bin/message.pl', function (req, res, next) {
-    console.log("recive wavecom...." + req.query.mobile + "在" + req.query.time + "发来消息,内容是:" + req.query.content);
     var mobile = req.query.mobile;
     var time = req.query.time;
     var content = req.query.content;
+
+    console.log("recive wavecom...." + mobile + "在" + time + "发来消息,内容是:" + content);
 
     var MongoClient = require("mongodb").MongoClient;
     MongoClient.connect("mongodb://localhost:27017/wavecom", function (err, db) {
         if (!err) {
             db.collection("record", function (err, collection) {
                 if (!err) {
-                    collection.insert({"time": time, "content": content, "mobile": mobile, "create_at": new Date()}, function (err, result) {
+                    collection.insert({"time": time, "content": content, "mobile": mobile}, function (err, result) {
                         db.close();
                     })
                 }
