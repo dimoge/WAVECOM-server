@@ -2,6 +2,8 @@
 var express = require("express");
 var path = require("path");
 var bodyParser = require('body-parser');
+var encoding = require("encoding");
+
 var app = express();
 
 app.use(bodyParser.json());//使用bod-parser中间件解析request的数据
@@ -21,7 +23,7 @@ app.set('view engine', 'ejs');
 app.get('/wavecom/cgi-bin/message.pl', function (req, res, next) {
     var mobile = req.query.mobile;
     var time = req.query.time;
-    var content = req.query.content;
+    var content = encoding.convert(req.query.content);
 
     console.log("recive wavecom...." + mobile + "在" + time + "发来消息,内容是:" + content);
 
@@ -35,8 +37,6 @@ app.get('/wavecom/cgi-bin/message.pl', function (req, res, next) {
                     })
                 }
             })
-
-
         }
     })
 });

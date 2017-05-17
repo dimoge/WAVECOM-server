@@ -1,17 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <title>博客管理</title>
 </head>
 <body>
 
 <p1>订单记录</p1>
+<hr/>
 
+<label>编号</label>
+<label style="margin-left: 50px;margin-right: 120px;">订单号</label>
+<label>电话</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<label>标题</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<label>内容</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<label>时间</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<hr/>
 <% for(var i = 0 ; i < records.length ; i++){ %>
-<%= i %>&nbsp;&nbsp; <%= records[i]._id %>&nbsp;&nbsp; <%= records[i].time %>&nbsp;&nbsp;<%= records[i].content %> &nbsp;&nbsp;<%= records[i].create_at %>
-</br>
+
+    <%= i %>&nbsp;&nbsp;<label style="height: 40px;width: 1px;"/> &nbsp;
+    <%= records[i]._id %>&nbsp;<label style="height: 40px;width:1px;"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <%= records[i].mobile %>&nbsp;<label style="height: 40px;width:1px;"/>&nbsp;
+    <%= records[i].title %><label style="height: 40px;width:1px;"/> &nbsp;&nbsp;
+    <%= records[i].content %> <label style="height: 40px;width:1px;"/>&nbsp;
+    <%= records[i].time %>
+    <hr/>
 <% } %>
+
 <br>
 <hr/>
 <br>
