@@ -29,8 +29,9 @@ app.get('/wavecom/cgi-bin/message.pl', function (req, res, next) {
         if (!err) {
             db.collection("record", function (err, collection) {
                 if (!err) {
-                    collection.insert({"time": time, "content": content, "mobile": mobile, "create_at": new Date()})
-                    db.close();
+                    collection.insert({"time": time, "content": content, "mobile": mobile, "create_at": new Date()}, function (err, result) {
+                        db.close();
+                    })
                 }
             })
 
