@@ -13,8 +13,6 @@ var port = 3000;
 
 
 app.set('view engine', 'ejs');
-//app.set('/public', __dirname+'/public');
-app.use('/public', express.static(path.join(__dirname, 'public')));
 
 /**
  * 接收短信猫的请求
