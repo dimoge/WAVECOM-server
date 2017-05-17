@@ -27,7 +27,7 @@ app.get('/wavecom/cgi-bin/message.pl', function (req, res, next) {
     var MongoClient = require("mongodb").MongoClient;
     MongoClient.connect("mongodb://localhost:27017/wavecom", function (err, db) {
         if (!err) {
-            collection("record", function (err, collection) {
+            db.collection("record", function (err, collection) {
                 if (!err) {
                     collection.insert({"time": time, "content": content, "mobile": mobile, "create_at": new Date()})
                     db.close();
