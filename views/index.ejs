@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>博客管理</title>
+</head>
+<body>
+
+<p1>订单记录</p1>
+
+<% for(var i = 0 ; i < records.length ; i++){ %>
+<%= i %>&nbsp;&nbsp; <%= records[i]._id %>&nbsp;&nbsp; <%= records[i].time %>&nbsp;&nbsp;<%= records[i].content %> &nbsp;&nbsp;<%= records[i].create_at %>>
+<% } %>
+<br>
+<hr/>
+<br>
+
+</body>
+</html>
