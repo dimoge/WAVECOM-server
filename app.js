@@ -23,7 +23,7 @@ app.set('view engine', 'ejs');
 app.get('/wavecom/cgi-bin/message.pl', function (req, res, next) {
     var mobile = req.query.mobile;
     var time = req.query.time;
-    var content = encoding.convert(req.query.content);
+    var content = encoding.convert(req.query.content, 'utf-8');
 
     console.log("recive wavecom...." + mobile + "在" + time + "发来消息,内容是:" + content);
 
