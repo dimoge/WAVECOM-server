@@ -1,12 +1,17 @@
-var express = require('express');
-var path = require('path');
-var bodyParser = require("body-parser");
-
+//引入第三方model
+var express = require("express");
+var path = require("path");
+var bodyParser = require('body-parser');
 var app = express();
+
+app.use(bodyParser.json());//使用bod-parser中间件解析request的数据
+app.use(bodyParser.urlencoded({extended: false}));
+app.set("view engine", "ejs");//使用ejs作为模板引擎
+
+
 var port = 3000;
 
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extend: false}));
+
 app.set('view engine', 'ejs');
 //app.set('/public', __dirname+'/public');
 app.use('/public', express.static(path.join(__dirname, 'public')));
